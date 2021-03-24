@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Twitter</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @connections.each do |connection| %>
+      <tr>
+        <td><%= connection.first_name %></td>
+        <td><%= connection.last_name %></td>
+        <td><%= connection.twitter %></td>
+        <td><%= connection.email %></td>
+        <td><%= connection.phone %></td>
+        <td><%= link_to 'Show', connection %></td>
+        <td><%= link_to 'Edit', edit_connection_path(connection) %></td>
+        <td><%= link_to 'Destroy', connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Connection', new_connection_path, class: "btn btn-secondary" %>

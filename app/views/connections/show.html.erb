@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @connection.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @connection.last_name %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @connection.twitter %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @connection.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @connection.phone %>
+</p>
+
+<%= link_to 'Edit', edit_connection_path(@connection) %> |
+<%= link_to 'Back', connections_path %>
