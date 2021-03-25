@@ -1,4 +1,5 @@
 <%= form_with(model: connection) do |form| %>
+  <br />
   <% if connection.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(connection.errors.count, "error") %> prohibited this connection from being saved:</h2>
@@ -11,32 +12,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="field form-group">
+    <%= form.text_field :first_name, class: "form-control", placeholder: "First Name" %>
   </div>
+  <br />
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="field form-group">
+    <%= form.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
   </div>
+  <br />
 
-  <div class="field">
-    <%= form.label :twitter %>
-    <%= form.text_field :twitter %>
+  <div class="field form-group">
+    <%= form.text_field :twitter, class: "form-control", placeholder: "@twitter" %>
   </div>
+  <br />
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="field form-group">
+    <%= form.text_field :email, class: "form-control", placeholder: "example@abc.com" %>
   </div>
+  <br />
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="field form-group">
+    <%= form.text_field :phone, class: "form-control", placeholder: "9888888888" %>
   </div>
+  <br />
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-secondary"%>
   </div>
+  <br />
 <% end %>

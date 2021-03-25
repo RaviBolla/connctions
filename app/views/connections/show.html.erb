@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @connection.first_name %> <%= @connection.last_name %></h1>
+  <p class="lead">
+    <%= @connection.email %> |
+    <%= @connection.phone %> |
+    <%= @connection.twitter %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @connection.first_name %>
-</p>
+  <br />
 
-<p>
-  <strong>Last name:</strong>
-  <%= @connection.last_name %>
-</p>
+  <p class="lead">
+    <%= link_to 'Edit', edit_connection_path(@connection), class: "btn btn-secondary" %>
+    <%= link_to 'Back', connections_path, class: "btn btn-dark" %>
+  </p>
+</div>
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @connection.twitter %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @connection.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @connection.phone %>
-</p>
-
-<%= link_to 'Edit', edit_connection_path(@connection) %> |
-<%= link_to 'Back', connections_path %>
