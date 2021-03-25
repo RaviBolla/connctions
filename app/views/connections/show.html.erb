@@ -9,7 +9,9 @@
   <br />
 
   <p class="lead">
-    <%= link_to 'Edit', edit_connection_path(@connection), class: "btn btn-secondary" %>
+    <% if @connection.user_id == current_user.id  %>
+      <%= link_to 'Edit', edit_connection_path(@connection), class: "btn btn-secondary" %>
+    <% end %>
     <%= link_to 'Back', connections_path, class: "btn btn-dark" %>
   </p>
 </div>

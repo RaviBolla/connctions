@@ -19,8 +19,13 @@
         <td><%= connection.email %></td>
         <td><%= connection.phone %></td>
         <td><%= link_to 'Show', connection %></td>
-        <td><%= link_to 'Edit', edit_connection_path(connection) %></td>
-        <td><%= link_to 'Destroy', connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if connection.user_id == current_user.id  %>
+          <td><%= link_to 'Edit', edit_connection_path(connection) %></td>
+          <td><%= link_to 'Destroy', connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
