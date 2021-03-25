@@ -22,7 +22,7 @@ class ConnectionsController < ApplicationController
   # POST /connections or /connections.json
   def create
     @connection = Connection.new(connection_params)
-
+    @connection.user_id = current_user.id
     respond_to do |format|
       if @connection.save
         format.html { redirect_to @connection, notice: "Connection was successfully created." }
