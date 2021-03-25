@@ -27,5 +27,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Connection', new_connection_path, class: "btn btn-secondary" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Connection', new_connection_path, class: "btn btn-secondary" %>
+<% end %>
